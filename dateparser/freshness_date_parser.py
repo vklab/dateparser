@@ -112,7 +112,8 @@ class FreshnessDateDataParser:
             ):
                 date = date.replace(tzinfo=None)
 
-        self.now = None
+        # This causes issues with threading. https://github.com/scrapinghub/dateparser/issues/276#issuecomment-290427553
+        # self.now = None
         return date, period
 
     def _parse_date(self, date_string, prefer_dates_from):

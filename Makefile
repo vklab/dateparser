@@ -59,3 +59,7 @@ dist: clean
 	python setup.py sdist
 	python setup.py bdist_wheel
 	ls -l dist
+
+.PHONY: deploy
+deploy:
+	vklabs_pypi publish-package .
