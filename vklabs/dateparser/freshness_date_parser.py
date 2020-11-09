@@ -5,7 +5,7 @@ from tzlocal import get_localzone
 
 from dateutil.relativedelta import relativedelta
 
-from dateparser.utils import apply_timezone, localize_timezone, strip_braces
+from .utils import apply_timezone, localize_timezone, strip_braces
 from .parser import time_parser
 from .timezone_parser import pop_tz_offset_from_string
 
@@ -112,7 +112,7 @@ class FreshnessDateDataParser:
             ):
                 date = date.replace(tzinfo=None)
 
-        # This causes issues with threading. https://github.com/scrapinghub/dateparser/issues/276#issuecomment-290427553
+        # This causes issues with threading. https://github.com/scrapinghub/dateparser/issues/276#issuecomment-290427553`
         # self.now = None
         return date, period
 
@@ -155,7 +155,7 @@ class FreshnessDateDataParser:
         return kwargs
 
     def get_date_data(self, date_string, settings=None):
-        from dateparser.date import DateData
+        from vklabs.dateparser.date import DateData
 
         date, period = self.parse(date_string, settings)
         return DateData(date_obj=date, period=period)

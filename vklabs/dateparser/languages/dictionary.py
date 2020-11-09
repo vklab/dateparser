@@ -2,7 +2,7 @@ from itertools import chain, zip_longest
 from operator import methodcaller
 import regex as re
 
-from dateparser.utils import normalize_unicode
+from vklabs.dateparser.utils import normalize_unicode
 
 PARSER_HARDCODED_TOKENS = [":", ".", " ", "-", "/"]
 PARSER_KNOWN_TOKENS = ["am", "pm", "UTC", "GMT", "Z"]

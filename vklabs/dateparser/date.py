@@ -6,13 +6,13 @@ from datetime import datetime, timedelta
 import regex as re
 from dateutil.relativedelta import relativedelta
 
-from dateparser.date_parser import date_parser
-from dateparser.freshness_date_parser import freshness_date_parser
-from dateparser.languages.loader import LocaleDataLoader
-from dateparser.conf import apply_settings, check_settings
-from dateparser.parser import _parse_absolute, _parse_nospaces
-from dateparser.timezone_parser import pop_tz_offset_from_string
-from dateparser.utils import apply_timezone_from_settings, \
+from .date_parser import date_parser
+from .freshness_date_parser import freshness_date_parser
+from .languages.loader import LocaleDataLoader
+from .conf import apply_settings, check_settings
+from .parser import _parse_absolute, _parse_nospaces
+from .timezone_parser import pop_tz_offset_from_string
+from .utils import apply_timezone_from_settings, \
     set_correct_day_from_settings
 
 APOSTROPHE_LOOK_ALIKE_CHARS = [

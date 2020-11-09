@@ -173,7 +173,7 @@ class LocaleDataLoader:
                     self._loaded_locales[shortname] = locale
                 else:
                     language_info = getattr(
-                        import_module('dateparser.data.date_translation_data.' + lang), 'info')
+                        import_module('vklabs.dateparser.data.date_translation_data.' + lang), 'info')
                     locale = Locale(shortname, language_info=deepcopy(language_info))
                     self._loaded_languages[lang] = language_info
                     self._loaded_locales[shortname] = locale

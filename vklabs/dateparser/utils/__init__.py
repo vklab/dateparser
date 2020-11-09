@@ -9,7 +9,7 @@ from tzlocal import get_localzone
 from pytz import UTC, timezone, UnknownTimeZoneError
 from collections import OrderedDict
 
-from dateparser.timezone_parser import _tz_offsets, StaticTzInfo
+from ..timezone_parser import _tz_offsets, StaticTzInfo
 
 
 def strip_braces(date_string):

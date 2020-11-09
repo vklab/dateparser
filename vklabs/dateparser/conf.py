@@ -48,7 +48,7 @@ class Settings:
     @classmethod
     def _get_settings_from_pyfile(cls):
         if not cls._pyfile_data:
-            from dateparser_data import settings
+            from ..dateparser_data import settings
             cls._pyfile_data = settings.settings
         return cls._pyfile_data
 
@@ -77,6 +77,7 @@ settings = Settings()
 def apply_settings(f):
     @wraps(f)
     def wrapper(*args, **kwargs):
+        print("FOOGAZI")
         mod_settings = kwargs.get('settings')
         kwargs['settings'] = mod_settings or settings
 

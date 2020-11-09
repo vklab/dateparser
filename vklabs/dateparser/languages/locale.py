@@ -5,8 +5,8 @@ from collections import OrderedDict
 
 from dateutil import parser
 
-from dateparser.timezone_parser import pop_tz_offset_from_string, word_is_tz
-from dateparser.utils import normalize_unicode, combine_dicts
+from vklabs.dateparser.timezone_parser import pop_tz_offset_from_string, word_is_tz
+from vklabs.dateparser.utils import normalize_unicode, combine_dicts
 
 from .dictionary import Dictionary, NormalizedDictionary, ALWAYS_KEEP_TOKENS
 
