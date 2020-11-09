@@ -77,7 +77,6 @@ settings = Settings()
 def apply_settings(f):
     @wraps(f)
     def wrapper(*args, **kwargs):
-        print("FOOGAZI")
         mod_settings = kwargs.get('settings')
         kwargs['settings'] = mod_settings or settings
 

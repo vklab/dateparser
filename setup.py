@@ -1,23 +1,13 @@
 import re
 from setuptools import setup, find_packages
 
-introduction = re.sub(r':members:.+|..\sautomodule::.+|:class:|:func:|:ref:', '', open('docs/introduction.rst').read())
-history = re.sub(r':mod:|:class:|:func:', '', open('HISTORY.rst').read())
-
-test_requirements = open('tests/requirements.txt').read().splitlines()
 
 setup(
     name='dateparser',
-    version="0.0.1",
+    version="1.0.0-el2",
     description='Date parsing library designed to parse dates from HTML pages',
-    long_description=introduction + '\n\n' + history,
-    author='Scrapinghub',
-    author_email='info@scrapinghub.com',
-    url='https://github.com/scrapinghub/dateparser',
-    project_urls={
-        'History': 'https://dateparser.readthedocs.io/en/latest/history.html',
-    },
-    packages=["vklabs.dateparser"],
+    long_description="forked version of dateparser for threading",
+    packages=find_packages(exclude=('tests', 'tests.*')),
     include_package_data=True,
     install_requires=[
         'python-dateutil',

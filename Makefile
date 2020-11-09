@@ -63,3 +63,9 @@ dist: clean
 .PHONY: deploy
 deploy:
 	vklabs_pypi publish-package .
+
+
+.PHONY: build
+build:
+		pip install setuptools wheel ;\
+		python3 setup.py sdist bdist_wheel
