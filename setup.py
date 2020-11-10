@@ -1,13 +1,18 @@
 import re
 from setuptools import setup, find_packages
 
-__version__ = "1.0.0-el5"
+__version__ = re.search(r"__version__.*\s*=\s*[']([^']+)[']", open('dateparser/__init__.py').read()).group(1)
+
+introduction = re.sub(r':members:.+|..\sautomodule::.+|:class:|:func:|:ref:', '', open('docs/introduction.rst').read())
+history = re.sub(r':mod:|:class:|:func:', '', open('HISTORY.rst').read())
+
+test_requirements = open('tests/requirements.txt').read().splitlines()
 
 setup(
     name='dateparser',
-    version=__version__,
+    version="1.0.0-vklabs1",
     description='Date parsing library designed to parse dates from HTML pages',
-    long_description="forked to fix threading issue",
+    long_description=introduction + '\n\n' + history,
     author='Scrapinghub',
     author_email='info@scrapinghub.com',
     url='https://github.com/scrapinghub/dateparser',
