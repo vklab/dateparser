@@ -112,7 +112,17 @@ class FreshnessDateDataParser:
             ):
                 date = date.replace(tzinfo=None)
 
-        self.now = None
+        # self.now = None
+
+        # This ^ causes issues with threading.
+        # I think we're OK to take this "reset" out here.
+        # self.now = None gets set in the init of this class.
+
+        # Issue:
+        # https://github.com/scrapinghub/dateparser/issues/276#issuecomment-290427553
+
+        # Commit, with someone else also removing this reset
+        # https://github.com/mistio/dateparser/commit/7bfc3f4ab6e7c6255ecbed9011078c07a63700ef
         return date, period
 
     def _parse_date(self, date_string, prefer_dates_from):
