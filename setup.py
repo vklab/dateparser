@@ -10,7 +10,7 @@ test_requirements = open('tests/requirements.txt').read().splitlines()
 
 setup(
     name='dateparser',
-    version="1.0.0-vklabs1",
+    version="1.0.0+vklabs1",
     description='Date parsing library designed to parse dates from HTML pages',
     long_description=introduction + '\n\n' + history,
     author='Scrapinghub',
